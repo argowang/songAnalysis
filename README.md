@@ -10,12 +10,18 @@ the chinese character printed out is unreadable code. I encountered the same pro
 Therefore I wish my code may provide some extents of help.
 
 Module needed:
+
 THULAC
+
 Pyecharts (for visualization)
+
 requests
+
 bs4
 
 =======================Aug 30th update
-implement the scraping module
+
+Implement the scraping module
+
 By entering the singers' id on the music.163.com, the web scraping module will gather all of singers' songs and lyrics. 
 This largely increase the efficiency of collecting data and improve the analysis outcome.
