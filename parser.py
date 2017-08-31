@@ -99,9 +99,9 @@ for ele in sorted_f_dict:
 wordcloud = WordCloud(width=1300, height=620)
 wordcloud.add("", sorted_word[0:100], sorted_f[0:100], word_size_range=[10, 100], shape='diamond')
 wordcloud.show_config()
-wordcloud.render(r"/Users/mrdoggie/Desktop/Project/hipHopAnalysis/hiphopAnalysis.html")
+wordcloud.render(r"/Users/mrdoggie/Desktop/Project/hipHopAnalysis/Output/hiphopAnalysis.html")
 
-output = open('/Users/mrdoggie/Desktop/Project/hipHopAnalysis/output.txt','w')
+output = open('/Users/mrdoggie/Desktop/Project/hipHopAnalysis/Output/output.txt','w')
 for ele in sorted_f_dict:
 	print >> output, ele[0],
 	print >> output, ele[1]
