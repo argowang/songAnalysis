@@ -25,3 +25,13 @@ Implement the scraping module
 
 By entering the singers' id on the music.163.com, the web scraping module will gather all of singers' songs and lyrics. 
 This largely increase the efficiency of collecting data and improve the analysis outcome.
+
+
+TODO:
+Filter out bad word
+
+Transcribe Chinese character to Pinyin
+
+Use previous project to transcribe Pinyin into rhyme
+
+Analyze the most frequently showing rhyme pairs
