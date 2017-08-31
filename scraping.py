@@ -32,7 +32,7 @@ for id in singer_id_list:
 	# record the name of the songs analyzed
 
 	for each in music_name_set:
-		f = open("/Users/mrdoggie/Desktop/Project/LyricsAnalysis/scrappedSongList.txt", "ab")
+		f = open("/Users/mrdoggie/Desktop/Project/hipHopAnalysis/scrappedSongList.txt", "ab")
 		try:
 			f.write(singer_name.encode('utf-8') + each.encode('utf-8')  + '\n') #one song name each line
 			f.close
@@ -53,7 +53,7 @@ for id in singer_id_list:
 		except KeyError as e:
 			pass
 		all_lyrics = lrc
-		f = open("/Users/mrdoggie/Desktop/Project/LyricsAnalysis/scrappedLyrics.txt", "ab")
+		f = open("/Users/mrdoggie/Desktop/Project/hipHopAnalysis/scrappedLyrics.txt", "ab")
 		try:
 			f.write(all_lyrics.encode('utf-8'))
 			f.close
