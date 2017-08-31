@@ -53,25 +53,36 @@ f=file('/Users/mrdoggie/Desktop/Project/LyricsAnalysis/scrappedLyrics.txt')
 raw = f.read()
 f.close()
 
-######### NO TYPE is Considered###########
-#initiate parser, no type is considered 
-# thul = thulac.thulac(seg_only=True, filt=True)
+
+######## NO TYPE is Considered###########
+# initiate parser, no type is considered 
+# thul = thulac.thulac(T2S=True, filt=True)
 # parsed = thul.cut(raw, text=False)
 # cleaned_parsed = cleanup(parsed)
 # nonDupList = []
 # counterList = []
 # analysis = groupAndCount(cleaned_parsed, nonDupList, counterList)
 
-######### Consider One Type ###############
+# ######### Consider One Type ###############
 thul = thulac.thulac(T2S=True, filt=True)
 parsed = thul.cut(raw, text=False)
-filted_parsed = filtType(parsed, 'nz')
+filted_parsed = filtType(parsed, 'n')
 nonDupList = []
 counterList = []
 analysis = groupAndCount(filted_parsed, nonDupList, counterList)
 
 #combine the word with corresponding frequency
 frequency_dict = dict(zip(nonDupList, counterList))
+
+#Remove unwanted word in the dictionary
+bad_words = ['I', 'me', 'you', 'u', '', 'it', 'my', 'the', 'a', 'to', '\'', 'know', 'i', 'up', 'so', 'm', 'J', 'are', 'do', 'be', 'busy', 's']
+for word in bad_words:
+	try:
+		del frequency_dict[word]
+	except:
+		pass
+
+
 #sort according to frequency
 sorted_f_dict = sorted(frequency_dict.items(), lambda x, y: cmp(x[1],y[1]), reverse=True)
 
@@ -81,10 +92,13 @@ for ele in sorted_f_dict:
 	sorted_word.append(ele[0])
 	sorted_f.append(ele[1])
 
+
+
+#Visualize the output using wordcloud
 wordcloud = WordCloud(width=1300, height=620)
 wordcloud.add("", sorted_word[0:100], sorted_f[0:100], word_size_range=[10, 100], shape='diamond')
 wordcloud.show_config()
-wordcloud.render()
+wordcloud.render(r"/Users/mrdoggie/Desktop/Project/LyricsAnalysis/hiphopAnalysis.html")
 
 output = open('/Users/mrdoggie/Desktop/output.txt','w')
 for ele in sorted_f_dict:
