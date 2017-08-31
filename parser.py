@@ -49,7 +49,7 @@ def groupAndCount(wordList, nonDupList, counterList):
 
 
 # load input
-f=file('/Users/mrdoggie/Desktop/rap.txt')
+f=file('/Users/mrdoggie/Desktop/Project/LyricsAnalysis/scrappedLyrics.txt')
 raw = f.read()
 f.close()
 
@@ -63,9 +63,9 @@ f.close()
 # analysis = groupAndCount(cleaned_parsed, nonDupList, counterList)
 
 ######### Consider One Type ###############
-thul = thulac.thulac(filt=True)
+thul = thulac.thulac(T2S=True, filt=True)
 parsed = thul.cut(raw, text=False)
-filted_parsed = filtType(parsed, 'ns')
+filted_parsed = filtType(parsed, 'nz')
 nonDupList = []
 counterList = []
 analysis = groupAndCount(filted_parsed, nonDupList, counterList)
@@ -91,23 +91,4 @@ for ele in sorted_f_dict:
 	print >> output, ele[0],
 	print >> output, ele[1]
 output.close()
-
-
-# print counterList
-
-
-
-
-# print(counterList)
-
-
-
-
-
-
-
-# if __name__ == '__main__':
-# 	if len(sys.argv) == 1:
-
-# 		parse(sys.argv[0])
-# 		
+	
