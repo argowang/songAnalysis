@@ -30,6 +30,10 @@ requests
 
 bs4
 
+lxml
+
+pypinyin
+
 =======================Aug 30th update
 
 Implement the scraping module
@@ -45,12 +49,17 @@ word. The function helps to clean up the result.
 Modify visualization part so that the visualization html file is generated in the same directory as the code.
 
 
+=======================Sept 4th update
+
+Use regular expression to format the lyrics: one sentence per line and remove redundent newlines
+Add in transcribeToPinyin module:
+	pull out the last word of each sentence (The rhyme word)
+	use pypinyin to transcribe chinese character into pinyin
+	use consecutive end-of-line words to form rhyme pairs
+
+
 
 TODO:
-
-Extract every chinese character at end of each line. Put into a single array
-
-Transcribe this array to Pinyin
 
 Use previous project to transcribe Pinyin into rhyme
 

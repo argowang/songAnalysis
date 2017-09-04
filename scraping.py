@@ -32,7 +32,8 @@ for id in singer_id_list:
 	# record the name of the songs analyzed
 
 	for each in music_name_set:
-		f = open("/Users/mrdoggie/Desktop/Project/hipHopAnalysis/scrappedSongList.txt", "ab")
+		# f = open("/Users/mrdoggie/Desktop/Project/hipHopAnalysis/scrappedSongList.txt", "ab") #on mac
+		f = open("C:/github/songAnalysis/scrappedSongList.txt", "ab") #on windows
 		try:
 			f.write(singer_name.encode('utf-8') + each.encode('utf-8')  + '\n') #one song name each line
 			f.close
@@ -52,8 +53,13 @@ for id in singer_id_list:
 			lrc=lrc.strip()
 		except KeyError as e:
 			pass
-		all_lyrics = lrc
-		f = open("/Users/mrdoggie/Desktop/Project/hipHopAnalysis/scrappedLyrics.txt", "ab")
+		# Reformat the lyrics. Get ready for later transcription. Notice: this will mess up the looking in texteditor
+		all_lyrics = re.sub(r' ','\n',lrc) #convert all whitespace to newline to unify the format
+		all_lyrics = re.sub(r'\n+', '\n', all_lyrics) #remove duplicated newline
+		
+
+		# f = open("/Users/mrdoggie/Desktop/Project/hipHopAnalysis/scrappedLyrics.txt", "ab") #on mac
+		f = open("C:/github/songAnalysis/scrappedLyrics.txt", "ab") #on windows
 		try:
 			f.write(all_lyrics.encode('utf-8'))
 			f.close
