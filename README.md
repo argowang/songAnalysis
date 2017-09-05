@@ -57,13 +57,15 @@ Add in transcribeToPinyin module:
 	use pypinyin to transcribe chinese character into pinyin
 	use consecutive end-of-line words to form rhyme pairs
 
+=======================Sept 5th update
 
+Complete rhyme pair frequency count. Now we can see the most frequently shown rhyme pairs
 
 TODO:
 
-Use previous project to transcribe Pinyin into rhyme
+visualize rhyme pair frequency
 
-Analyze the most frequently showing rhyme pairs
+find out words with same rhyme based on input
 
 Classify song based on adj. and n.
 
