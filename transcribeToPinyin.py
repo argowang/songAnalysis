@@ -5,7 +5,7 @@ from pypinyin import pinyin, lazy_pinyin
 import pypinyin
 import re
 import collections
-
+from pyecharts import Bar
 
 f=file('C:/github/songAnalysis/scrappedLyrics.txt')
 #change into the format that pypinyin can work on
@@ -150,3 +150,9 @@ for each in sorted_f_dict:
 	sorted_values.append(each[1])
 	f.write(each[0] + ': ' + str(each[1]) + '\n')	
 f.close
+
+attr = sorted_keys[0:99]
+v1 = sorted_values[0:99]
+bar = Bar("Chinese Hip-hop Music Rhyme Pair Frequency")
+bar.add("", attr, v1, is_datazoom_show=True, is_label_show = True)
+bar.render(r"C:/github/songAnalysis/Output/rhymeFrequency.html") 
