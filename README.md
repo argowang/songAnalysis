@@ -61,9 +61,10 @@ Add in transcribeToPinyin module:
 
 Complete rhyme pair frequency count. Now we can see the most frequently shown rhyme pairs
 
-TODO:
+Visualize rhyme pair frequency
 
-visualize rhyme pair frequency
+
+TODO:
 
 find out words with same rhyme based on input
 
